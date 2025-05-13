@@ -4,7 +4,7 @@ import Nav from "react-bootstrap/Nav";
 
 function NavBar() {
   return (
-    <Navbar bg="primary" variant="dark" expand="lg" className="p-3 mb-4">
+    <Navbar bg="primary" variant="dark" expand="lg" className="p-3 mb-4" sticky="top">
       <Navbar.Brand href="/">My Fake Store</Navbar.Brand>
       <Navbar.Toggle aria-controls="basic-navbar-nav" />
       <Navbar.Collapse id="basic-navbar-nav">

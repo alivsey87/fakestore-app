@@ -29,17 +29,17 @@ function Products() {
   if (loading)
     return (
       <>
-        <p>Loading...</p> <Spinner />
+        <p className="mt-5">Loading...</p> <Spinner />
       </>
     );
   if (error) return <p>{error}</p>;
 
   return (
     <Container className="py-5">
-      <h2>Our Products</h2>
+      <h2 className="fade-down">Our Products</h2>
       <Row className="ms-auto justify-content-center">
         {products.map((product) => (
-          <Col key={product.id} md={6} lg={4} className="mt-4">
+          <Col key={product.id} md={6} lg={4} className="mt-4 fade-up">
             <Card style={{ width: "18rem" }} className="mb-4 p-4 product-card">
               <Card.Img
                 src={product.image}

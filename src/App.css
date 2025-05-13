@@ -1,3 +1,7 @@
+body {
+  background-color: #e7e9f3 !important;
+}
+
 #root {
   max-width: 1280px;
   margin: 0 auto;
@@ -6,13 +10,13 @@
 }
 
 .product-card {
-  height: 100%; 
+  height: 100%;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   justify-self: center;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.4);
-  transition: all 200ms;
+  transition: all 300ms;
 }
 
 .product-image {
@@ -21,10 +25,10 @@
 }
 
 .product-title {
-  height: 3rem; 
+  height: 3rem;
   overflow: hidden;
-  text-overflow: ellipsis; 
-  white-space: nowrap; 
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
 .product-card .card-body {
@@ -36,6 +40,33 @@
 .product-card:hover {
   transform: translateY(-5px);
   box-shadow: 0 5px 10px rgba(0, 0, 0, 0.4);
+}
+
+.details-card {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  justify-self: center;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.4);
+}
+
+.details-image {
+  height: 400px;
+  object-fit: contain;
+}
+
+.details-title {
+  height: 3rem;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.details-card .details-body {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 .modal-content {
@@ -61,6 +92,26 @@
 
 .modal-static .modal-dialog {
   animation: shake 200ms linear !important;
+}
+
+.fade-up {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeIn 1s ease-out forwards;
+}
+
+.fade-down {
+  opacity: 0;
+  transform: translateY(-20px);
+  animation: fadeIn 1s ease-out forwards;
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+    /* Move to original position */
+  }
 }
 
 

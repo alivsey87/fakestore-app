@@ -12,13 +12,15 @@ function ProductDetails() {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
   const [deleted, setDeleted] = useState(false);
+  const [confirm, setConfirm] = useState(false);
   const [show, setShow] = useState(false);
 
   const deleteProduct = () => {
     axios
       .delete(`https://fakestoreapi.com/products/${id}`)
-      .then((response) => {
+      .then(() => {
         setDeleted(true);
+        setConfirm(false);
       })
       .catch((error) => {
         console.log(error);
@@ -44,21 +46,46 @@ function ProductDetails() {
   return (
     <>
       <Container>
-        <Card>
-          <Card.Img src={product.image} alt={product.title} />
-          <Card.Body>
-            <Card.Title>{product.title}</Card.Title>
+        <Card className="details-card p-3 fade-up">
+          <Card.Img
+            className="details-image"
+            src={product.image}
+            alt={product.title}
+          />
+          <Card.Body className="details-body">
+            <Card.Title className="details-title">{product.title}</Card.Title>
             <Card.Text>{product.description}</Card.Text>
             <Card.Text>{`$${parseFloat(product.price).toFixed(2)}`}</Card.Text>
             <Card.Text>
               {product.category.charAt(0).toUpperCase() +
                 product.category.slice(1)}
             </Card.Text>
-            <Button onClick={() => setShow(true)}>Add to Cart</Button>
-            <Button onClick={deleteProduct}>Delete Product</Button>
+            <div className="d-flex justify-content-center mt-3">
+              <Button className="me-2" onClick={() => setShow(true)}>
+                Add to Cart
+              </Button>
+              <Button variant="danger" onClick={() => setConfirm(true)}>
+                Delete Product
+              </Button>
+            </div>
           </Card.Body>
         </Card>
       </Container>
+
+      <Modal show={confirm} backdrop="static" keyboard={false} centered>
+        <Modal.Header>
+          <Modal.Title>Confirm Deletion</Modal.Title>
+        </Modal.Header>
+        <Modal.Body>Are you sure you want to delete this product?</Modal.Body>
+        <Modal.Footer>
+          <Button variant="primary" onClick={deleteProduct}>
+            Yes
+          </Button>
+          <Button variant="danger" onClick={() => setConfirm(false)}>
+            No
+          </Button>
+        </Modal.Footer>
+      </Modal>
 
       <Modal show={deleted} backdrop="static" keyboard={false} centered>
         <Modal.Header>

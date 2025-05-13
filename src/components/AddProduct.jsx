@@ -42,9 +42,9 @@ function AddProduct() {
   return (
     <>
       <Container>
-        <h2>Add Product</h2>
+        <h2 className="fade-down">Add Product</h2>
 
-        <Form onSubmit={handleSubmit}>
+        <Form className="fade-up" onSubmit={handleSubmit}>
           <Form.Group>
             <Form.Label>Title</Form.Label>
             <Form.Control
@@ -121,7 +121,7 @@ function AddProduct() {
           <Modal.Title>Addition Successful</Modal.Title>
         </Modal.Header>
         <Modal.Body>
-          Product <b>{formData.title}</b> was successfully added!
+          <b>{formData.title}</b> was successfully added!
         </Modal.Body>
         <Modal.Footer>
           <Button href="/products">Back to Products</Button>
