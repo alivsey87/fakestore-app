@@ -3,7 +3,6 @@ import { useParams } from "react-router-dom";
 import Button from "react-bootstrap/esm/Button";
 import axios from "axios";
 import Container from "react-bootstrap/esm/Container";
-import Alert from "react-bootstrap/Alert";
 import Form from "react-bootstrap/Form";
 import Modal from "react-bootstrap/Modal";
 
@@ -60,15 +59,9 @@ function EditProduct() {
   return (
     <>
       <Container>
-        <h2>Edit Product</h2>
+        <h2 className="fade-down">Edit Product</h2>
 
-        {error && (
-          <Alert variant="danger" dismissible>
-            {error}
-          </Alert>
-        )}
-
-        <Form onSubmit={handleSubmit}>
+        <Form className="fade-up" onSubmit={handleSubmit}>
           <Form.Group>
             <Form.Label>Title</Form.Label>
             <Form.Control
@@ -129,7 +122,7 @@ function EditProduct() {
             />
           </Form.Group>
 
-          <Button variant="primary" type="submit">
+          <Button className="mt-3" variant="primary" type="submit">
             Submit
           </Button>
         </Form>

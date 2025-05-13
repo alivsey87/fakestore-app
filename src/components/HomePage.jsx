@@ -5,14 +5,19 @@ import Button from "react-bootstrap/Button";
 
 function HomePage() {
   return (
-    <Container className="mt-5 fade-down">
+    <Container className="mt-5">
       <Row>
-        <Col className="mt-5">
-          <h1 className="mt-5">Welcome to the Fake Store App!</h1>
+        <Col className="mt-5 fade-down">
+          <h1 className="mt-5">Welcome to the Fake Store</h1>
         </Col>
       </Row>
       <Row>
-        <Col className="mt-5">
+        <Col className="mt-5 fade-down">
+          <h4>You can't buy, but you can certainly <b>see</b> our products!</h4>
+        </Col>
+      </Row>
+      <Row>
+        <Col className="mt-5 fade-up">
           <Button href="/products">Products</Button>
         </Col>
       </Row>

@@ -1,5 +1,4 @@
 import { useState, useEffect } from "react";
-import { Routes, Route } from "react-router-dom";
 import axios from "axios";
 import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
@@ -57,7 +56,7 @@ function Products() {
                   <Button href={`/products/${product.id}`} className="me-2">
                     View Details
                   </Button>
-                  <Button href={`/products/${product.id}/edit_product`}>
+                  <Button href={`/products/${product.id}/edit-product`}>
                     Edit
                   </Button>
                 </div>
